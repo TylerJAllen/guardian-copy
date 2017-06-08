@@ -52,6 +52,12 @@
 
 .headline:last-of-type {
   // @include grid-collapse();
-  @include grid-container();
+  // @include grid-container();
   // @include grid-column(2, $default-grid);
 }
+
+// @media screen and (min-width: 741px) and (max-width: 895px) {
+//   .panel p {
+//     font-size: 1.8vw;
+//   }
+// }

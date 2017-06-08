@@ -7,20 +7,133 @@ section {
   @include clearfix;
 }
 
-@include grid-media($default-grid) {
-  .headlines .headline {
-    height: $first-panel-laptop-height;
-    &:first-of-type {
-    @include grid-column(3, $default-grid);
-    }
-    &:nth-of-type(2) {
+.even-superer-container {
+  @extend .super-container;
+}
+
+// media queries to set different grids and properties for headlines section
+@include grid-media($tablet-grid) {
+  .headlines {
+    @include grid-media($tablet-grid)
+    width: 700px;
+    padding: 0 20px;
+    margin: 0 auto;
+    @include grid-container;
+    & .headline {
       height: $first-panel-laptop-height;
-    }
-    &:nth-of-type(n+2) {
-      @include grid-column(1, $default-grid);
-    }
-    &:last-of-type {
-      @include grid-column(2, $default-grid);
+      &:first-of-type {
+      @include grid-column(3, $tablet-grid);
+        & .image {
+          width: 100%;
+          margin-left: $first-panel-laptop-image-margin-left;
+          height: auto;
+          @include grid-column(2, $laptop-hero-grid);
+          @include grid-shift(1, $laptop-hero-grid);
+          height: 75%;
+        }
+          & img {
+            height: 100%;
+          }
+        & .text {
+          @include grid-column(1, $laptop-hero-grid);
+          @include grid-shift(-2, $laptop-hero-grid);
+          height: 75%;
+        }
+        & .little-bottom {
+          @include grid-column(1, $laptop-hero-grid);
+          height: 20%;
+        }
+      }
+      &:nth-of-type(2) {
+        height: $first-panel-laptop-height;
+        & .text {
+          @include grid-column(4, $tablet-grid);
+
+        }
+      }
+      &:nth-of-type(n+2) {
+        @include grid-column(1, $tablet-grid);
+        & .image, & img {
+          height: 132px;
+          width: 100%;
+        }
+        & .image {
+          @include grid-column(4, $tablet-grid);
+        }
+        & .image img {
+          width: 100%;
+          height: 132px;
+        }
+        & .text {
+          @include grid-column(4, $tablet-grid);
+          padding-left: 10px;
+        }
+      }
+      &:last-of-type {
+        @include grid-column(2, $tablet-grid);
+        & .super-container {
+          @include grid-collapse;
+          @include grid-container;
+          height: inherit;
+        }
+      }
+      & .sub {
+        @include grid-column(1, $sub-grid);
+        height: $sub-panel-height;
+      }
     }
   }
+} //end tablet media
+
+//laptop media query
+@include grid-media($laptop-grid) {
+  .headlines {
+    width: 940px;
+    & .headline {
+      height: $first-panel-laptop-height;
+      &:first-of-type {
+      @include grid-column(3, $laptop-grid);
+      }
+      &:nth-of-type(2) {
+        height: $first-panel-laptop-height;
+        & .text {
+          @include grid-column(4, $laptop-grid);
+        }
+      }
+      &:nth-of-type(n+2) {
+        @include grid-column(1, $laptop-grid);
+        & .image, & img {
+          height: 132px;
+          width: 100%;
+        }
+        & .image {
+          @include grid-column(4, $laptop-grid);
+        }
+        & .image img {
+          width: 100%;
+          height: 132px;
+        }
+        & .text {
+          @include grid-column(4, $laptop-grid);
+          padding-left: 10px;
+        }
+      }
+      &:last-of-type {
+        @include grid-column(2, $laptop-grid);
+        & .super-container {
+          @include grid-collapse;
+          @include grid-container;
+        }
+
+      }
+      & .sub {
+        @include grid-column(1, $sub-grid);
+        height: $sub-panel-height;
+      }
+    }
+  }
+} //end laptop media
+
+@media screen and (min-width: $desktop-media) {
+
 }

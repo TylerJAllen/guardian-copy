@@ -7,17 +7,35 @@
 //   gutter: 10px,
 // );
 
-$default-grid: (
+
+$laptop-hero-grid: (
+  columns: 3,
+  gutter: $grid-gutter,
+);
+
+$tablet-grid: (
   columns: 4,
-  gutter: 10px,
+  gutter: $grid-gutter,
   media: 740px,
 );
 
-$desktop-grid: (
-  columns: 5,
-  gutter: 10px,
-  media: 1140px,
+$sub-grid: (
+  columns: 2,
+  gutter: $grid-gutter,
 );
+
+// media: 740px,
+$laptop-grid: (
+  columns: 4,
+  gutter: $grid-gutter,
+  media: 980px,
+);
+
+// $desktop-grid: (
+//   columns: 5,
+//   gutter: $grid-gutter,
+//   media: 1140px,
+// );
 
 
 // .headline:nth-of-type(4) {

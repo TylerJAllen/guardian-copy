@@ -1,77 +1,79 @@
-*, *:before, *:after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; }
+/*
+Error: Invalid CSS after "...a($tablet-grid)": expected "}", was "width: 700px;"
+        on line 18 of sass/layout/_main-div.scss
+        from line 16 of main.scss
 
-header {
-  background: #005689; }
+13: 
+14: // media queries to set different grids and properties for headlines section
+15: @include grid-media($tablet-grid) {
+16:   .headlines {
+17:     @include grid-media($tablet-grid)
+18:     width: 700px;
+19:     padding: 0 20px;
+20:     margin: 0 auto;
+21:     @include grid-container;
+22:     & .headline {
+23:       height: $first-panel-laptop-height;
 
-main {
-  background-color: #F5F5F5; }
-
-section {
-  background-color: #ffffff; }
-  section::after {
-    clear: both;
-    content: "";
-    display: table; }
-
-@media only screen and (min-width: 740px) {
-  .headlines .headline {
-    height: 275px; }
-    .headlines .headline:first-of-type {
-      width: calc(75% - 17.5px);
-      float: left;
-      margin-left: 10px; }
-    .headlines .headline:nth-of-type(2) {
-      height: 275px; }
-    .headlines .headline:nth-of-type(n+2) {
-      width: calc(25% - 12.5px);
-      float: left;
-      margin-left: 10px; }
-    .headlines .headline:last-of-type {
-      width: calc(50% - 15px);
-      float: left;
-      margin-left: 10px; } }
-.panel {
-  height: auto;
-  margin-bottom: 12px;
-  padding: 4px;
-  border-top: 1px solid #4bc6df;
-  overflow: auto;
-  background-color: #F5F5F5; }
-  .panel img {
-    height: 76px;
-    width: 126px; }
-  .panel .image {
-    float: left;
-    width: 126px;
-    height: 100%; }
-  .panel:first-of-type .image {
-    float: none;
-    width: 100%;
-    height: auto; }
-  .panel:first-of-type img {
-    width: 100%;
-    height: auto; }
-  .panel:first-of-type .text {
-    padding: 0 5px; }
-  .panel p {
-    font-size: 16px;
-    color: #4BC6DF; }
-    .panel p span {
-      color: #005689; }
-      .panel p span.breaking {
-        color: #B51800; }
-  .panel .text {
-    padding-left: 131px; }
-
-.image, .text {
-  border: 1px solid red; }
-
-.headline:last-of-type::after {
-  clear: both;
-  content: "";
-  display: block; }
-
-/*# sourceMappingURL=main.css.map */
+Backtrace:
+sass/layout/_main-div.scss:18
+main.scss:16
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:1207:in `expected'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:1137:in `expected'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:1132:in `tok!'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:667:in `block'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:735:in `declaration_or_ruleset'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:685:in `block_child'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:674:in `block_contents'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:666:in `block'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:245:in `include_directive'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:222:in `special_directive'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:197:in `directive'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:684:in `block_child'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:677:in `block_contents'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:125:in `stylesheet'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:41:in `parse'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/engine.rb:406:in `_to_tree'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/engine.rb:312:in `to_tree'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:326:in `block in visit_import'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/stack.rb:88:in `block in with_import'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/stack.rb:115:in `with_frame'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/stack.rb:88:in `with_import'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:325:in `visit_import'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/stack.rb:79:in `block in with_base'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/stack.rb:115:in `with_frame'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/stack.rb:79:in `with_base'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/base.rb:52:in `map'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:159:in `visit'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/root_node.rb:36:in `css_tree'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/engine.rb:381:in `_render_with_sourcemap'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/engine.rb:298:in `render_with_sourcemap'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:209:in `each'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:473:in `on_file_changed'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:331:in `block in watch'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
+/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.24/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...a($tablet-grid)\": expected \"}\", was \"width: 700px;\"\A         on line 18 of sass/layout/_main-div.scss\A         from line 16 of main.scss\A \A 13: \A 14: // media queries to set different grids and properties for headlines section\A 15: @include grid-media($tablet-grid) {\A 16:   .headlines {\A 17:     @include grid-media($tablet-grid)\A 18:     width: 700px;\A 19:     padding: 0 20px;\A 20:     margin: 0 auto;\A 21:     @include grid-container;\A 22:     & .headline {\A 23:       height: $first-panel-laptop-height;"; }

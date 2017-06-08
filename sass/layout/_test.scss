@@ -1,0 +1,51 @@
+
+
+
+
+
+.headlines {
+  @include grid-media($tablet-grid)
+    .headline {
+
+    }
+    .panel {
+
+    }
+}
+
+.container {
+  @include grid-media($tablet-grid)
+}
+
+.headline {
+  @include grid-media($tablet-grid)
+}
+
+.panel {
+  @include grid-media($tablet-grid)
+}
+
+.super {
+  @include grid-media($tablet-grid)
+}
+
+.super-container {
+  @include grid-media($tablet-grid)
+}
+
+.sub {
+  @include grid-media($tablet-grid)
+}
+.image {
+  @include grid-media($tablet-grid)
+}
+
+.text {
+  @include grid-media($tablet-grid)
+}
+
+.little-bottom {
+  @include grid-media($tablet-grid)
+  @include grid-column(1, $laptop-hero-grid);
+  height: 20%;
+}
