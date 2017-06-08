@@ -3,43 +3,75 @@
   padding: 0;
   box-sizing: border-box; }
 
-.headline {
-  height: 40px;
-  border: 1px solid red; }
-
-.headline:first-of-type {
-  width: calc(75% - 17.5px);
-  float: left;
-  margin-left: 10px; }
-
-.headline:nth-of-type(2) {
-  width: calc(25% - 12.5px);
-  float: left;
-  margin-left: 10px; }
-
-.headline:nth-of-type(3) {
-  width: calc(25% - 12.5px);
-  float: left;
-  margin-left: 10px; }
-
-.headline:nth-of-type(4) {
-  width: calc(25% - 12.5px);
-  float: left;
-  margin-left: 10px; }
-
-.headline:last-of-type {
-  margin-left: -20px;
-  margin-right: -20px;
-  width: calc(100% + 40px);
-  width: calc(50% - 15px);
-  float: left;
-  margin-left: 10px; }
-  .headline:last-of-type::after {
-    clear: both;
-    content: "";
-    display: block; }
-
 header {
   background: #005689; }
+
+main {
+  background-color: #F5F5F5; }
+
+section {
+  background-color: #ffffff; }
+  section::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+@media only screen and (min-width: 740px) {
+  .headlines .headline {
+    height: 275px; }
+    .headlines .headline:first-of-type {
+      width: calc(75% - 17.5px);
+      float: left;
+      margin-left: 10px; }
+    .headlines .headline:nth-of-type(2) {
+      height: 275px; }
+    .headlines .headline:nth-of-type(n+2) {
+      width: calc(25% - 12.5px);
+      float: left;
+      margin-left: 10px; }
+    .headlines .headline:last-of-type {
+      width: calc(50% - 15px);
+      float: left;
+      margin-left: 10px; } }
+.panel {
+  height: auto;
+  margin-bottom: 12px;
+  padding: 4px;
+  border-top: 1px solid #4bc6df;
+  overflow: auto;
+  background-color: #F5F5F5; }
+  .panel img {
+    height: 76px;
+    width: 126px; }
+  .panel .image {
+    float: left;
+    width: 126px;
+    height: 100%; }
+  .panel:first-of-type .image {
+    float: none;
+    width: 100%;
+    height: auto; }
+  .panel:first-of-type img {
+    width: 100%;
+    height: auto; }
+  .panel:first-of-type .text {
+    padding: 0 5px; }
+  .panel p {
+    font-size: 16px;
+    color: #4BC6DF; }
+    .panel p span {
+      color: #005689; }
+      .panel p span.breaking {
+        color: #B51800; }
+  .panel .text {
+    padding-left: 131px; }
+
+.image, .text {
+  border: 1px solid red; }
+
+.headline:last-of-type::after {
+  clear: both;
+  content: "";
+  display: block; }
 
 /*# sourceMappingURL=main.css.map */

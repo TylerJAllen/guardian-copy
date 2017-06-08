@@ -1,0 +1,57 @@
+.panel {
+  height: auto;
+  margin-bottom: 12px;
+  padding:4px;
+  border-top: 1px solid #4bc6df;
+  overflow: auto;
+  background-color: $background-color;
+  // @include grid-column(4, $mobile-grid);
+  & img {
+    height: $panel-image-height;
+    width: $panel-image-width;
+  }
+  & .image {
+    float: left;
+    width: $panel-image-width;
+    height: 100%;
+  }
+  &:first-of-type {
+    & .image {
+      float:none;
+      width: 100%;
+      height: auto;
+    }
+    & img {
+      // padding: 0;
+      width: 100%;
+      height: auto;
+    }
+    & .text {
+      padding: 0 5px;
+    }
+  }
+  & p {
+    font-size: $panel-font-size;
+    color: $panel-font-color;
+    & span {
+    color: $guardian-primary;
+      &.breaking {
+        color: $breaking-color;
+      }
+    }
+  }
+  .text {
+    padding-left: $panel-image-width + 5px;
+  }
+}
+
+.image, .text {
+  border: 1px solid red;
+}
+
+
+.headline:last-of-type {
+  // @include grid-collapse();
+  @include grid-container();
+  // @include grid-column(2, $default-grid);
+}
